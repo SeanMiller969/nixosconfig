@@ -79,8 +79,12 @@
     git
     gh
     vscode
+    (vscode-with-extensions.override {
+      vscodeExtensions = with vscode-extensions; [
+        bbenoist.nix
+      ];
+    })
   ];
 
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }
