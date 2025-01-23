@@ -81,7 +81,8 @@
     vscode
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
-        bbenoist.nix
+        eamodio.gitlens
+        jnoortheen.nix-ide
       ];
     })
   ];
