@@ -68,6 +68,12 @@
     description = "Sean";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      (vscode-with-extensions.override {
+        vscodeExtensions = with vscode-extensions; [
+          eamodio.gitlens
+          jnoortheen.nix-ide
+        ];
+      })
     #  thunderbird
     ];
   };
@@ -79,12 +85,6 @@
     git
     gh
     vscode
-    (vscode-with-extensions.override {
-      vscodeExtensions = with vscode-extensions; [
-        eamodio.gitlens
-        jnoortheen.nix-ide
-      ];
-    })
   ];
 
   system.stateVersion = "24.11"; # Did you read the comment?
