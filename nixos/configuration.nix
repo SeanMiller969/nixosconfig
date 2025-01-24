@@ -74,7 +74,6 @@
           jnoortheen.nix-ide
         ];
       })
-    #  thunderbird
     ];
   };
 
@@ -85,6 +84,7 @@
     git
     gh
     vscode
+    nixd
   ];
 
   system.stateVersion = "24.11"; # Did you read the comment?
