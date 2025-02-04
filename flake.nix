@@ -13,19 +13,13 @@
     };
   };
   
-  outputs = { self, nixpkgs, ... }@inputs:
-    let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config = {
-          allowUnfree = true;
-        };
-      };
-    in {
-      nixosConfigurations.sean = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs system; };
-        modules = [ ./nixos/configuration.nix ];
-      };
+  outputs = { self, nixpkgs, ... }@inputs: {
+    nixosConfigurations.sean = nixpkgs.lib.nixosSystem {
+      specialArgs = { inherit inputs; };
+      modules = [ 
+        ./nixos/configuration.nix
+        inputs.home-manager.nixosModules.home-manager
+      ];
     };
+  };
 }

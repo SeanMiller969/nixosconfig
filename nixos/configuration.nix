@@ -9,6 +9,7 @@
   
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
+    useGlobalPkgs = true;
     users = {
       sean = import ./home.nix;
     };
@@ -75,14 +76,6 @@
     isNormalUser = true;
     description = "Sean";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      (vscode-with-extensions.override {
-        vscodeExtensions = with vscode-extensions; [
-          eamodio.gitlens
-          jnoortheen.nix-ide
-        ];
-      })
-    ];
   };
 
   programs.firefox.enable = true;
@@ -91,7 +84,6 @@
   environment.systemPackages = with pkgs; [
     git
     gh
-    vscode
     nixd
     home-manager
   ];
