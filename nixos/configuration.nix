@@ -1,10 +1,18 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      inputs.home-manager.nixosModules.home-manager
     ];
+  
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      sean = import ./home.nix;
+    };
+  };
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -85,7 +93,8 @@
     gh
     vscode
     nixd
+    home-manager
   ];
 
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "24.11";
 }
