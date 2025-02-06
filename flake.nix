@@ -19,6 +19,11 @@
       modules = [ 
         ./nixos/configuration.nix
         inputs.home-manager.nixosModules.home-manager
+        {
+          nixpkgs.overlays = [
+            inputs.nix-vscode-extensions.overlays.default
+          ];
+        }
       ];
     };
   };

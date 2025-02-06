@@ -23,9 +23,11 @@
 
   programs.vscode = {
     enable = true;
-    extensions = with pkgs.vscode-extensions; [
+    extensions = with pkgs.vscode-marketplace; [
       eamodio.gitlens
       jnoortheen.nix-ide
+      llvm-vs-code-extensions.vscode-clangd
+      plorefice.devicetree
     ];
   };
 }
