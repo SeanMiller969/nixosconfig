@@ -7,7 +7,7 @@
   home.stateVersion = "24.11";
 
   home.packages = [
-    
+    pkgs.python.packages
   ];
 
   home.file = {
@@ -26,8 +26,13 @@
     extensions = with pkgs.vscode-marketplace; [
       eamodio.gitlens
       jnoortheen.nix-ide
-      llvm-vs-code-extensions.vscode-clangd
+      # llvm-vs-code-extensions.vscode-clangd
       plorefice.devicetree
-    ];
+      ms-python.python
+      ms-python.pylint
+      ms-python.debugpy
+    ] ++ (with pkgs.vscode-extensions; [
+      ms-vscode.cpptools # special case
+    ]);
   };
 }

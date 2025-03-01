@@ -1,1 +1,1 @@
-sudo nixos-rebuild switch --flake ~/nixosconfig#nixos
+sudo nixos-rebuild switch --flake ~/nixosconfig#sean

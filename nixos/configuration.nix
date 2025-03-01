@@ -86,6 +86,7 @@
     gh
     nixd
     home-manager
+    clang-tools
   ];
 
   system.stateVersion = "24.11";
