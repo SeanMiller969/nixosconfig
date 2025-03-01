@@ -87,6 +87,7 @@
     nixd
     home-manager
     clang-tools
+    python314
   ];
 
   system.stateVersion = "24.11";

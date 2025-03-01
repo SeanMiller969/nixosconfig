@@ -7,7 +7,7 @@
   home.stateVersion = "24.11";
 
   home.packages = [
-    pkgs.python.packages
+
   ];
 
   home.file = {
