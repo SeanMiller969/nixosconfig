@@ -3,7 +3,7 @@
 {
   home.username = "sean";
   home.homeDirectory = "/home/sean";
-  
+
   home.stateVersion = "24.11";
 
   imports = [ ./vscode.nix ];
