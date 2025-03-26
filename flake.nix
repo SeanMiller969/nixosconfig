@@ -1,29 +1,28 @@
 {
   inputs = {
-    nixpkgs.url = github:NixOS/nixpkgs/nixos-unstable;
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-vscode-extensions = {
-      url = "github:nix-community/nix-vscode-extensions";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
   
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nix-vscode-extensions, ... } @ inputs: let
+    inherit (self) outputs;
+      system = "x86_64-linux";
+    in     {
     nixosConfigurations.sean = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
+      specialArgs = { inherit inputs outputs; };
       modules = [ 
         ./nixos/configuration.nix
-        inputs.home-manager.nixosModules.home-manager
-        {
-          nixpkgs.overlays = [
-            inputs.nix-vscode-extensions.overlays.default
-          ];
-        }
+        home-manager.nixosModules.home-manager {
+          home-manager.extraSpecialArgs = {
+            nix-vscode-extensions = nix-vscode-extensions.extensions.${system};
+          };
+        }  
       ];
     };
   };
