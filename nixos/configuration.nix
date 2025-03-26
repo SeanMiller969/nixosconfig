@@ -86,7 +86,6 @@
   environment.systemPackages = with pkgs; [
     git
     gh
-    nixd
     home-manager
     clang-tools
   ];

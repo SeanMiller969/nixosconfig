@@ -28,6 +28,7 @@ in
       "[nix]" = {
         "editor.formatOnSave" = true;
       };
+      "nix.hiddenLanguageServerErrors" = [ "textDocument/formatting" ];
     };
   };
 }
