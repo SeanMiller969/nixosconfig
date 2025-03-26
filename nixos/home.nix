@@ -7,7 +7,9 @@
   home.stateVersion = "24.11";
 
   home.packages = [
-
+    pkgs.nixd
+    pkgs.nil
+    pkgs.nixfmt-rfc-style
   ];
 
   home.file = {
@@ -34,5 +36,18 @@
     ] ++ (with pkgs.vscode-extensions; [
       ms-vscode.cpptools # special case
     ]);
+
+    userSettings = {
+      "nix.serverPath" = "nil";
+      "nix.serverSettings" = {
+        "nil" = {
+          "formatting" = {
+            "command" = ["nixfmt"];
+          };
+        };
+      };
+      "nix.enableLanguageServer" = true;
+      "[nix]" = {"editor.formatOnSave" = true;};
+    };
   };
 }
