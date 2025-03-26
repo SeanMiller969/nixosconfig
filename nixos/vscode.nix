@@ -5,7 +5,7 @@ in
 {
   programs.vscode = {
     enable = true;
-    profiles.default = {
+    #profiles.default = {
       extensions = with extensions-marketplace; [
         eamodio.gitlens
         jnoortheen.nix-ide
@@ -29,5 +29,5 @@ in
         "[nix]" = {"editor.formatOnSave" = true;};
       };
     };
-  };
+  #};
 }

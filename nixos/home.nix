@@ -6,7 +6,7 @@
   
   home.stateVersion = "24.11";
 
-  import = [ ./vscode.nix ];
+  imports = [ ./vscode.nix ];
 
   home.packages = [
     pkgs.nixd

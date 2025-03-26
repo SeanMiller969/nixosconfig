@@ -19,7 +19,14 @@
       modules = [ 
         ./nixos/configuration.nix
         home-manager.nixosModules.home-manager {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.sean = import ./nixos/home.nix;
+          home-manager.backupFileExtension = "backup";
           home-manager.extraSpecialArgs = {
+            inherit inputs;
+            os = "linux";
+            accountUsername = "sean";
             nix-vscode-extensions = nix-vscode-extensions.extensions.${system};
           };
         }  

@@ -6,15 +6,6 @@
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.home-manager
     ];
-  
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    useGlobalPkgs = true;
-    users = {
-      sean = import ./home.nix;
-    };
-  };
-
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
