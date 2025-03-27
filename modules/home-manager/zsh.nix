@@ -12,7 +12,11 @@
       plugins = [
         "git"
       ];
-      theme = "robbyrussell";
+      theme = "eastwood";
+    };
+
+    shellAliases = {
+      rebuild = "sudo nixos-rebuild switch --flake ~/nixosconfig#sean";
     };
   };
 }
