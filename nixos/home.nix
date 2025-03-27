@@ -2,7 +2,10 @@
 
 {
 
-  imports = [ ../modules/home-manager/vscode.nix ];
+  imports = [
+    ../modules/home-manager/vscode.nix
+    ../modules/home-manager/zsh.nix
+  ];
 
   home.packages = with pkgs; [
     nixd
