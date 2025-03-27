@@ -77,7 +77,11 @@
       "networkmanager"
       "wheel"
     ];
+    shell = pkgs.zsh;
   };
+
+  programs.zsh.enable = true;
+  environment.shells = [ pkgs.zsh ];
 
   programs.firefox.enable = true;
   nixpkgs.config.allowUnfree = true;
