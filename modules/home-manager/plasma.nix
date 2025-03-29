@@ -9,10 +9,5 @@
       iconTheme = "Papirus-Dark";
     };
 
-    hotkeys.commands."launch-konsole" = {
-      name = "Launch Konsole";
-      key = "Meta+K";
-      command = "konsole";
-    };
   };
 }
