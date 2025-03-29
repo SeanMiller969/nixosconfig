@@ -29,7 +29,10 @@ in
         "[nix]" = {
           "editor.formatOnSave" = true;
         };
-        "nix.hiddenLanguageServerErrors" = [ "textDocument/formatting" ];
+        "nix.hiddenLanguageServerErrors" = [
+          "textDocument/formatting"
+          "textDocument/documentSymbol"
+        ];
       };
     };
   };
