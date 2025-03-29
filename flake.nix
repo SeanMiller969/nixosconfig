@@ -37,6 +37,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.sean = import ./nixos/home.nix;
             home-manager.backupFileExtension = "backup";
+            home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
             home-manager.extraSpecialArgs = {
               inherit inputs;
               os = "linux";

@@ -1,6 +1,6 @@
-{ plasma-manager }:
+{ ... }:
 {
-  programs.plasma-manager = {
+  programs.plasma = {
     enable = true;
 
     workspace = {
