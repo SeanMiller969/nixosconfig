@@ -5,7 +5,7 @@
   imports = [
     ../modules/home-manager/vscode.nix
     ../modules/home-manager/zsh.nix
-    ../modules/home-manager/plasma-manager.nix
+    ../modules/home-manager/plasma.nix
   ];
 
   home.packages = with pkgs; [
