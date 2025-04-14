@@ -12,6 +12,7 @@
     nixd
     nil
     nixfmt-rfc-style
+    htop
   ];
 
   home = {
